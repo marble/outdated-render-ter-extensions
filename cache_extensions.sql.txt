@@ -1,0 +1,48 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 3.4.10.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Erstellungszeit: 02. Mai 2012 um 10:28
+-- Server Version: 5.5.22
+-- PHP-Version: 5.3.10-1ubuntu3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Datenbank: `intro47`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `cache_extensions`
+--
+
+DROP TABLE IF EXISTS `cache_extensions`;
+CREATE TABLE IF NOT EXISTS `cache_extensions` (
+  `extkey` varchar(60) NOT NULL DEFAULT '',
+  `repository` int(11) unsigned NOT NULL DEFAULT '1',
+  `version` varchar(10) NOT NULL DEFAULT '',
+  `alldownloadcounter` int(11) unsigned NOT NULL DEFAULT '0',
+  `downloadcounter` int(11) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(150) NOT NULL DEFAULT '',
+  `description` mediumtext,
+  `state` int(4) NOT NULL DEFAULT '0',
+  `reviewstate` int(4) NOT NULL DEFAULT '0',
+  `category` int(4) NOT NULL DEFAULT '0',
+  `lastuploaddate` int(11) unsigned NOT NULL DEFAULT '0',
+  `dependencies` mediumtext,
+  `authorname` varchar(100) NOT NULL DEFAULT '',
+  `authoremail` varchar(100) NOT NULL DEFAULT '',
+  `ownerusername` varchar(50) NOT NULL DEFAULT '',
+  `t3xfilemd5` varchar(35) NOT NULL DEFAULT '',
+  `uploadcomment` mediumtext,
+  `authorcompany` varchar(100) NOT NULL DEFAULT '',
+  `intversion` int(11) NOT NULL DEFAULT '0',
+  `lastversion` int(3) NOT NULL DEFAULT '0',
+  `lastreviewedversion` int(3) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`extkey`,`version`,`repository`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
